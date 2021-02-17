@@ -70,6 +70,7 @@ namespace TextEditor
             this.mnuNewFile.Name = "mnuNewFile";
             this.mnuNewFile.Size = new System.Drawing.Size(180, 22);
             this.mnuNewFile.Text = "&New";
+            this.mnuNewFile.Click += new System.EventHandler(this.mnuNewFile_Click);
             // 
             // mnuExit
             // 

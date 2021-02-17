@@ -42,12 +42,29 @@ namespace TextEditor
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            f(MessageBox.Show("Do you want to Exit the current thread?", "ExitApplication", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.Yes){
+
+                Close();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void texteditior_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuNewFile_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to delete the current thread?", "NewFile", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                txtEditor.Text = "";
+            }
+         
         }
     }
 }
