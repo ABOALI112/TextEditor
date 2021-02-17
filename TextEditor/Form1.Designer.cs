@@ -1,7 +1,7 @@
 ﻿
 namespace TextEditor
 {
-    partial class Form1
+    partial class frmEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace TextEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,20 +41,20 @@ namespace TextEditor
             this.mnuSmall = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMedium = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLarge = new System.Windows.Forms.ToolStripMenuItem();
-            this.texteditior = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
+            this.txtEditor = new System.Windows.Forms.TextBox();
+            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnuMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuFormat});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(800, 24);
+            this.mnuMain.TabIndex = 0;
+            this.mnuMain.Text = "menuStrip1";
             // 
             // mnuFile
             // 
@@ -137,29 +137,29 @@ namespace TextEditor
             this.mnuLarge.Size = new System.Drawing.Size(180, 22);
             this.mnuLarge.Text = "La&rge";
             // 
-            // texteditior
+            // txtEditor
             // 
-            this.texteditior.Location = new System.Drawing.Point(0, 167);
-            this.texteditior.Multiline = true;
-            this.texteditior.Name = "texteditior";
-            this.texteditior.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.texteditior.Size = new System.Drawing.Size(800, 289);
-            this.texteditior.TabIndex = 1;
-            this.texteditior.TextChanged += new System.EventHandler(this.texteditior_TextChanged);
+            this.txtEditor.Location = new System.Drawing.Point(0, 167);
+            this.txtEditor.Multiline = true;
+            this.txtEditor.Name = "txtEditor";
+            this.txtEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtEditor.Size = new System.Drawing.Size(800, 289);
+            this.txtEditor.TabIndex = 1;
+            this.txtEditor.TextChanged += new System.EventHandler(this.texteditior_TextChanged);
             // 
-            // Form1
+            // frmEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.texteditior);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Controls.Add(this.txtEditor);
+            this.Controls.Add(this.mnuMain);
+            this.MainMenuStrip = this.mnuMain;
+            this.Name = "frmEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TextEditor";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuMain.ResumeLayout(false);
+            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +167,7 @@ namespace TextEditor
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnuMain;
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem mnuNewFile;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
@@ -179,7 +179,7 @@ namespace TextEditor
         private System.Windows.Forms.ToolStripMenuItem mnuSmall;
         private System.Windows.Forms.ToolStripMenuItem mnuMedium;
         private System.Windows.Forms.ToolStripMenuItem mnuLarge;
-        private System.Windows.Forms.TextBox texteditior;
+        private System.Windows.Forms.TextBox txtEditor;
     }
 }
 
