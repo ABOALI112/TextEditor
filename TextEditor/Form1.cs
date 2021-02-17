@@ -21,5 +21,10 @@ namespace TextEditor
         {
             Application.Exit();
         }
+
+        private void texteditior_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
