@@ -160,5 +160,20 @@ namespace TextEditor
             }
             outputfile.Close();
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void mnuOpenFile(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuSave_click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,6 +42,10 @@ namespace TextEditor
             this.mnuMedium = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLarge = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEditor = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dlgsave = new System.Windows.Forms.SaveFileDialog();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +64,8 @@ namespace TextEditor
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNewFile,
+            this.saveToolStripMenuItem,
+            this.openToolStripMenuItem,
             this.mnuExit});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(37, 20);
@@ -68,14 +74,14 @@ namespace TextEditor
             // mnuNewFile
             // 
             this.mnuNewFile.Name = "mnuNewFile";
-            this.mnuNewFile.Size = new System.Drawing.Size(98, 22);
+            this.mnuNewFile.Size = new System.Drawing.Size(180, 22);
             this.mnuNewFile.Text = "&New";
             this.mnuNewFile.Click += new System.EventHandler(this.mnuNewFile_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(98, 22);
+            this.mnuExit.Size = new System.Drawing.Size(180, 22);
             this.mnuExit.Text = "&Exit";
             this.mnuExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -155,6 +161,32 @@ namespace TextEditor
             this.txtEditor.TabIndex = 1;
             this.txtEditor.TextChanged += new System.EventHandler(this.texteditior_TextChanged);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "dlgOne";
+            this.openFileDialog1.Filter = "Text Files(*.txt)|.txt";
+            this.openFileDialog1.Title = "Open File";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // dlgsave
+            // 
+            this.dlgsave.Filter = "Text Files(*.txt)|.txt";
+            this.dlgsave.Title = "Save File Dialog";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.mnuOpenFile);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.mnuSave_click);
+            // 
             // frmEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +222,10 @@ namespace TextEditor
         private System.Windows.Forms.ToolStripMenuItem mnuMedium;
         private System.Windows.Forms.ToolStripMenuItem mnuLarge;
         private System.Windows.Forms.TextBox txtEditor;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog dlgsave;
     }
 }
 
