@@ -166,6 +166,8 @@ namespace TextEditor
             this.Name = "frmEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TextEditor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditor_closing);
+            this.Load += new System.EventHandler(this.frmEditor_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.ResumeLayout(false);

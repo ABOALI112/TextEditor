@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,6 +112,53 @@ namespace TextEditor
                     break;
             }
             ChangeFont();
+        }
+
+        private void frmEditor_Load(object sender, EventArgs e)
+        {
+            StreamReader inputfile = new StreamReader(Application.StartupPath + "\\note.ini");
+            mnuBold.Checked = Convert.ToBoolean(inputfile.ReadLine());
+            mnuItalic.Checked = Convert.ToBoolean(inputfile.ReadLine());
+            mnuUnderline.Checked = Convert.ToBoolean(inputfile.ReadLine());
+            int i = Convert.ToInt32(inputfile.ReadLine());
+
+            switch (i)
+            {
+                case 1:
+                    mnuSmall.PerformClick();
+                    break;
+                case 2:
+                    mnuMedium.PerformClick();
+                    break;
+                case 3:
+                    mnuLarge.PerformClick();
+                    break;
+
+            }
+            inputfile.Close();
+            ChangeFont();
+
+        }
+
+        private void frmEditor_closing(object sender, FormClosingEventArgs e)
+        {
+            StreamWriter outputfile = new StreamWriter(Application.StartupPath + "\\note.ini");
+            outputfile.WriteLine(mnuBold.Checked);
+            outputfile.WriteLine(mnuItalic.Checked);
+            outputfile.WriteLine(mnuUnderline.Checked);
+            if (mnuSize.Checked)
+            {
+                outputfile.WriteLine(1);
+            }
+            else if (mnuMedium.Checked)
+            {
+                outputfile.WriteLine(2);
+            }
+            else
+            {
+                outputfile.WriteLine(3);
+            }
+            outputfile.Close();
         }
     }
 }
