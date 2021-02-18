@@ -42,7 +42,7 @@ namespace TextEditor
             this.mnuMedium = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLarge = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEditor = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.dlgsave = new System.Windows.Forms.SaveFileDialog();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -161,12 +161,11 @@ namespace TextEditor
             this.txtEditor.TabIndex = 1;
             this.txtEditor.TextChanged += new System.EventHandler(this.texteditior_TextChanged);
             // 
-            // openFileDialog1
+            // dlgOpen
             // 
-            this.openFileDialog1.FileName = "dlgOne";
-            this.openFileDialog1.Filter = "Text Files(*.txt)|.txt";
-            this.openFileDialog1.Title = "Open File";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.dlgOpen.Filter = "Text Files(*.txt)|.txt";
+            this.dlgOpen.Title = "Open File";
+            this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // dlgsave
             // 
@@ -222,7 +221,7 @@ namespace TextEditor
         private System.Windows.Forms.ToolStripMenuItem mnuMedium;
         private System.Windows.Forms.ToolStripMenuItem mnuLarge;
         private System.Windows.Forms.TextBox txtEditor;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog dlgOpen;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog dlgsave;

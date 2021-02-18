@@ -168,12 +168,23 @@ namespace TextEditor
 
         private void mnuOpenFile(object sender, EventArgs e)
         {
-
+            if (dlgOpen.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader inputfile = new StreamReader(dlgOpen.FileName);
+                txtEditor.Text = inputfile.ReadToEnd();
+                inputfile.Close();
+                txtEditor.SelectionLength = 0;
+            }
         }
 
         private void mnuSave_click(object sender, EventArgs e)
         {
-
+            if (dlgsave.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter outputfile = new StreamWriter(dlgsave.FileName);
+                outputfile.Write(txtEditor.Text);
+                outputfile.Close();
+            } 
         }
     }
 }
