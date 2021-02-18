@@ -115,27 +115,37 @@ namespace TextEditor
         }
 
         private void frmEditor_Load(object sender, EventArgs e)
-        {
-            StreamReader inputfile = new StreamReader(Application.StartupPath + "\\note.ini");
-            mnuBold.Checked = Convert.ToBoolean(inputfile.ReadLine());
-            mnuItalic.Checked = Convert.ToBoolean(inputfile.ReadLine());
-            mnuUnderline.Checked = Convert.ToBoolean(inputfile.ReadLine());
-            int i = Convert.ToInt32(inputfile.ReadLine());
-
-            switch (i)
+        {try
             {
-                case 1:
-                    mnuSmall.PerformClick();
-                    break;
-                case 2:
-                    mnuMedium.PerformClick();
-                    break;
-                case 3:
-                    mnuLarge.PerformClick();
-                    break;
+                StreamReader inputfile = new StreamReader(Application.StartupPath + "\\note.ini");
+                mnuBold.Checked = Convert.ToBoolean(inputfile.ReadLine());
+                mnuItalic.Checked = Convert.ToBoolean(inputfile.ReadLine());
+                mnuUnderline.Checked = Convert.ToBoolean(inputfile.ReadLine());
+                int i = Convert.ToInt32(inputfile.ReadLine());
+
+                switch (i)
+                {
+                    case 1:
+                        mnuSmall.PerformClick();
+                        break;
+                    case 2:
+                        mnuMedium.PerformClick();
+                        break;
+                    case 3:
+                        mnuLarge.PerformClick();
+                        break;
+
+                }
+                inputfile.Close();
+            }catch (FileNotFoundException)
+            {
+                MessageBox.Show("Configration File not Found","DefaultReset",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                mnuBold.Checked = false;
+                mnuItalic.Checked = false;
+                mnuUnderline.Checked = false;
+                mnuSmall.PerformClick();
 
             }
-            inputfile.Close();
             ChangeFont();
 
         }
@@ -184,7 +194,7 @@ namespace TextEditor
                 StreamWriter outputfile = new StreamWriter(dlgsave.FileName);
                 outputfile.Write(txtEditor.Text);
                 outputfile.Close();
-            } 
-        }
+            }
+        } 
     }
 }
