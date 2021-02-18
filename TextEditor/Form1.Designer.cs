@@ -68,14 +68,14 @@ namespace TextEditor
             // mnuNewFile
             // 
             this.mnuNewFile.Name = "mnuNewFile";
-            this.mnuNewFile.Size = new System.Drawing.Size(180, 22);
+            this.mnuNewFile.Size = new System.Drawing.Size(98, 22);
             this.mnuNewFile.Text = "&New";
             this.mnuNewFile.Click += new System.EventHandler(this.mnuNewFile_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Size = new System.Drawing.Size(98, 22);
             this.mnuExit.Text = "&Exit";
             this.mnuExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -95,18 +95,21 @@ namespace TextEditor
             this.mnuBold.Name = "mnuBold";
             this.mnuBold.Size = new System.Drawing.Size(180, 22);
             this.mnuBold.Text = "&Bold";
+            this.mnuBold.Click += new System.EventHandler(this.mnuBold_Click);
             // 
             // mnuItalic
             // 
             this.mnuItalic.Name = "mnuItalic";
             this.mnuItalic.Size = new System.Drawing.Size(180, 22);
             this.mnuItalic.Text = "&Italic";
+            this.mnuItalic.Click += new System.EventHandler(this.mnuItalic_Click);
             // 
             // mnuUnderline
             // 
             this.mnuUnderline.Name = "mnuUnderline";
             this.mnuUnderline.Size = new System.Drawing.Size(180, 22);
             this.mnuUnderline.Text = "&UnderLine";
+            this.mnuUnderline.Click += new System.EventHandler(this.mnuUnderline_Click);
             // 
             // mnuSize
             // 
@@ -117,6 +120,7 @@ namespace TextEditor
             this.mnuSize.Name = "mnuSize";
             this.mnuSize.Size = new System.Drawing.Size(180, 22);
             this.mnuSize.Text = "&Size";
+            this.mnuSize.Click += new System.EventHandler(this.mnuSizeClick);
             // 
             // mnuSmall
             // 
@@ -125,26 +129,29 @@ namespace TextEditor
             this.mnuSmall.Name = "mnuSmall";
             this.mnuSmall.Size = new System.Drawing.Size(180, 22);
             this.mnuSmall.Text = "Sma&ll";
+            this.mnuSmall.Click += new System.EventHandler(this.mnuSizeClick);
             // 
             // mnuMedium
             // 
             this.mnuMedium.Name = "mnuMedium";
             this.mnuMedium.Size = new System.Drawing.Size(180, 22);
             this.mnuMedium.Text = "&Medium";
+            this.mnuMedium.Click += new System.EventHandler(this.mnuSizeClick);
             // 
             // mnuLarge
             // 
             this.mnuLarge.Name = "mnuLarge";
             this.mnuLarge.Size = new System.Drawing.Size(180, 22);
             this.mnuLarge.Text = "La&rge";
+            this.mnuLarge.Click += new System.EventHandler(this.mnuSizeClick);
             // 
             // txtEditor
             // 
-            this.txtEditor.Location = new System.Drawing.Point(0, 167);
+            this.txtEditor.Location = new System.Drawing.Point(0, 38);
             this.txtEditor.Multiline = true;
             this.txtEditor.Name = "txtEditor";
             this.txtEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtEditor.Size = new System.Drawing.Size(800, 289);
+            this.txtEditor.Size = new System.Drawing.Size(800, 414);
             this.txtEditor.TabIndex = 1;
             this.txtEditor.TextChanged += new System.EventHandler(this.texteditior_TextChanged);
             // 

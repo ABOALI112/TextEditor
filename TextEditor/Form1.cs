@@ -42,7 +42,7 @@ namespace TextEditor
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f(MessageBox.Show("Do you want to Exit the current thread?", "ExitApplication", MessageBoxButtons.YesNo, 
+            if(MessageBox.Show("Do you want to Exit the current thread?", "ExitApplication", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.Yes){
 
                 Close();
@@ -65,6 +65,52 @@ namespace TextEditor
                 txtEditor.Text = "";
             }
          
+        }
+
+        private void mnuBold_Click(object sender, EventArgs e)
+        {
+            mnuBold.Checked = !mnuBold.Checked;
+            ChangeFont();
+        }
+
+        private void mnuItalic_Click(object sender, EventArgs e)
+        {
+            mnuItalic.Checked = !mnuItalic.Checked;
+            ChangeFont();
+
+        }
+
+        private void mnuUnderline_Click(object sender, EventArgs e)
+        {
+            mnuUnderline.Checked = !mnuUnderline.Checked;
+            ChangeFont();
+        }
+
+        private void mnuSizeClick(object sender, EventArgs e)
+        {
+            string mnusizeclicked = ((ToolStripMenuItem)sender).Text;
+            mnuSmall.Checked = false;
+            mnuMedium.Checked = false;
+            mnuLarge.Checked = false;
+
+            switch (mnusizeclicked)
+            {
+                case "Sma&ll":
+                    fontSize = 8;
+                    mnuSmall.Checked = true;
+                    break;
+
+                case "&Medium":
+                    fontSize = 12;
+                    mnuMedium.Checked = true;
+                    break;
+
+                case "La&rge":
+                    fontSize = 16;
+                    mnuLarge.Checked = true;
+                    break;
+            }
+            ChangeFont();
         }
     }
 }
